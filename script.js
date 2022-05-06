@@ -20,19 +20,25 @@ async function loadWeather(e){
 };
 function getWeather(data){
     console.log(data)
+    const country = data.sys.country;
+    const city = data.name;
+    const temp = Math.round(data.main.temp);
+    const wind =Math.round(data.wind.speed);
+    const status = data.weather[0].main;
+    const weatherIcon = data.weather[0].icon;
     const template = 
     `
     <div class="wrapper">
     <div id="weather" class="weather">
         <div class="weather__stats">
-            <div class="country"></div>
-            <div class="city"></div>
-            <div class="status"></div>
-            <div class="temp"></div>
-            <div class="wind"></div>
+            <div class="country">${country}</div>
+            <div class="city">${city}</div>
+            <div class="status">${status}</div>
+            <div class="temp">${temp} C°</div>
+            <div class="wind">${wind} m/s</div>
         </div>
         <div class="weather__img">
-            <img src="" alt="">
+            <img src="https://openweathermap.org/img/w/${weatherIcon}.png" alt="">
         </div>
     </div>
     </div>
