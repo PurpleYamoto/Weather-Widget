@@ -18,3 +18,27 @@ async function loadWeather(e){
         weatherBlock.innerHTML = responseResult.message;
     }
 };
+function getWeather(data){
+    console.log(data)
+    const template = 
+    `
+    <div class="wrapper">
+    <div id="weather" class="weather">
+        <div class="weather__stats">
+            <div class="country"></div>
+            <div class="city"></div>
+            <div class="status"></div>
+            <div class="temp"></div>
+            <div class="wind"></div>
+        </div>
+        <div class="weather__img">
+            <img src="" alt="">
+        </div>
+    </div>
+    </div>
+    `
+    weatherBlock.innerHTML = template;
+}
+if(weatherBlock){
+    loadWeather()
+}
