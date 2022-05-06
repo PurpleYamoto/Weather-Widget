@@ -3,8 +3,8 @@ const weatherBlock = document.querySelector('#weather');
 
 async function loadWeather(e){
     weatherBlock.innerHTML = `
-    <div class="weather__img">
-        <img src="./src/loader.gif" alt="loading...">
+    <div class="weather__loader">
+        <img class="loader" src="./src/loader.gif" alt="loading...">
     </div>
     `
     const server = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=London&appid=34ea910f7f7d6edf620f627f64a3248c`
@@ -20,7 +20,6 @@ async function loadWeather(e){
 };
 function getWeather(data){
     console.log(data)
-    const country = data.sys.country;
     const city = data.name;
     const temp = Math.round(data.main.temp);
     const wind =Math.round(data.wind.speed);
@@ -30,12 +29,12 @@ function getWeather(data){
     `
     <div class="wrapper">
     <div id="weather" class="weather">
+    <p class="description">current weather</p>
         <div class="weather__stats">
-            <div class="country">${country}</div>
-            <div class="city">${city}</div>
-            <div class="status">${status}</div>
-            <div class="temp">${temp} C°</div>
-            <div class="wind">${wind} m/s</div>
+            <div class="city param">${city}</div>
+            <div class="status param">${status}</div>
+            <div class="temp param">${temp} C°</div>
+            <div class="wind param">Wind speed: ${wind} m/s</div>
         </div>
         <div class="weather__img">
             <img src="https://openweathermap.org/img/w/${weatherIcon}.png" alt="">
