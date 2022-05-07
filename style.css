@@ -21,12 +21,22 @@ body{
     margin: 0 auto;
     background-color: rgb(234, 233, 233);
 }
+.wrapper{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .wrapper,.weather__loader{
     padding: 10px;
     background-color: #f89844;
     max-width: 300px;
     margin: 0 auto;
     border-radius: 25px;
+}
+.weather__loader{
+    border-radius: 50%;
+    background-color: #fff;
 }
 .weather__stats{
     font-size: 25px;
