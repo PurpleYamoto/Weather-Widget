@@ -29,7 +29,6 @@ function getWeather(data){
     `
     <div class="wrapper">
     <div id="weather" class="weather">
-    <p class="description">current weather</p>
         <div class="weather__stats">
             <div class="city param">${city}</div>
             <div class="status param">${status}</div>
